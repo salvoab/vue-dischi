@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <title>ex-dischi-musicali</title>
+        <link href="https://fonts.googleapis.com/css?family=Lato&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="./assets/css/style.css">
+        <!-- axios CDN -->
+        <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    </head>
+    <body>
+        <div id="app">
+            <header>
+                <div class="container">
+                    <img src="./assets/img/logo.png" alt="logo" />
+                    <div class="scelta-genere">
+                        <label for="genere">Scegli il genere musicale</label>
+                        <select name="genere" id="genere">
+                            <option value="All">Tutti i generi</option>
+                            <option value="Pop">Pop</option>
+                            <option value="Rock">Rock</option>
+                            <option value="Metal">Metal</option>
+                            <option value="Jazz">Jazz</option>
+                        </select>
+                    </div>
+                </div>
+            </header>
+    
+            <div class="cds-container container">
+                <!-- Disco ad esempio -->
+                <div v-for="disco in dischiDaMostrare" class="cd">
+                    <img :src="disco.poster">
+                    <h3>{{disco.title}}</h3>
+                    <span class="author">{{disco.author}}</span>
+                    <span class="year">{{disco.year}}</span>
+                </div>
+            </div>
+        </div>
+        
+
+        <!-- Vue Dev CDN -->
+        <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+        <!-- mio script -->
+        <script src="./assets/js/main.js" charset="utf-8"></script>
+    </body>
+</html>
